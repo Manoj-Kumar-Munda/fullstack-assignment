@@ -31,4 +31,16 @@ const addCard = async (req, res, next) => {
   }
 };
 
-export { addCard };
+const getCards = async (req, res) => {
+  try {
+    const cards = await Card.find();
+    console.log(cards);
+    return res
+      .status(200)
+      .json(new ApiResponse(200, "Cards fetched successfully"));
+  } catch (error) {
+    return res.status(500).json(error?.message || "Internal server error");
+  }
+};
+
+export { addCard , getCards};

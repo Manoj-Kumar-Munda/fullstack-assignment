@@ -1,5 +1,5 @@
 import express, { urlencoded } from "express";
-import { addCard } from "./controllers/card.controller.js";
+import { addCard, getCards } from "./controllers/card.controller.js";
 
 const app = express();
 
@@ -10,6 +10,7 @@ app.get("/ping", (req, res) => {
   return res.send("Server is running");
 });
 
-app.post("/cards", addCard)
+app.post("/cards", addCard);
+app.get("/cards", getCards);
 
 export default app;
