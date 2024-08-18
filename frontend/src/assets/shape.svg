@@ -1,0 +1,9 @@
+
+
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top and Right Sides of the Square -->
+  <path d="M 10 15 H 90 M 90 10 V 90" stroke="black" stroke-width="12" fill="none" />
+
+  <!-- Donut-Shaped Circle Inside the Square -->
+  <circle cx="55" cy="50" r="18" stroke="black" stroke-width="12" fill="white" />
+</svg>
