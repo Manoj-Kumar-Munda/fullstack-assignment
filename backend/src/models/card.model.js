@@ -1,10 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 
 const cardSchema = Schema({
-  id: {
-    type: String,
-    required: true,
-  },
   title: {
     type: String,
     required: true,
@@ -13,6 +9,10 @@ const cardSchema = Schema({
     type: String,
     required: true,
   },
+  link: {
+    type: String,
+
+  }
 });
 
 const Card = mongoose.model("Card", cardSchema);

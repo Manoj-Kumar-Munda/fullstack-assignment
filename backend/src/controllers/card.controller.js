@@ -1,0 +1,34 @@
+import Card from "../models/card.model";
+import { ApiResponse } from "../utils/ApiResponse";
+
+const addCard = async (req, res, next) => {
+  const { title, description, link } = req.body;
+  try {
+    if (!title) {
+      return res.status(400).json(new ApiResponse(400, "Title is required"));
+    }
+    if (!description) {
+      return res
+        .status(400)
+        .json(new ApiResponse(400, "Description is required"));
+    }
+
+    const card = await Card.create({
+      title,
+      description,
+      link,
+    });
+
+    if (!card) {
+      return res
+        .status(500)
+        .json(new ApiResponse(500, "failed to create cards"));
+    }
+
+    return res.status(200).json(new ApiResponse(200, "card created", card));
+  } catch (error) {
+    return res.status(500).json(error?.message || "Internal server error");
+  }
+};
+
+export { addCard };
