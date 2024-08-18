@@ -43,4 +43,24 @@ const getCards = async (req, res) => {
   }
 };
 
-export { addCard , getCards};
+const getCard = async (req, res) => {
+  const { title } = req.params;
+  console.log(title);
+  
+  try {
+    if (!title) {
+      return res.status(400).json(new ApiResponse(400, "title is required"));
+    }
+    const card = await Card.findOne({ title });
+    if (!card) {
+      return res.status(404).json(new ApiResponse(404, "Card not found"));
+    }
+    return res
+      .status(200)
+      .json(new ApiResponse(200, "card fetched successfilly", card));
+  } catch (error) {
+    return res.status(500).json(error?.message || "Internal server error");
+  }
+};
+
+export { addCard, getCards, getCard };
