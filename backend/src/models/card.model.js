@@ -11,7 +11,6 @@ const cardSchema = Schema({
   },
   link: {
     type: String,
-
   }
 });
 

@@ -1,5 +1,5 @@
-import Card from "../models/card.model";
-import { ApiResponse } from "../utils/ApiResponse";
+import Card from "../models/card.model.js";
+import { ApiResponse } from "../utils/ApiResponse.js";
 
 const addCard = async (req, res, next) => {
   const { title, description, link } = req.body;
@@ -34,10 +34,9 @@ const addCard = async (req, res, next) => {
 const getCards = async (req, res) => {
   try {
     const cards = await Card.find();
-    console.log(cards);
     return res
       .status(200)
-      .json(new ApiResponse(200, "Cards fetched successfully"));
+      .json(new ApiResponse(200, "Cards fetched successfully", cards));
   } catch (error) {
     return res.status(500).json(error?.message || "Internal server error");
   }
@@ -45,7 +44,6 @@ const getCards = async (req, res) => {
 
 const getCard = async (req, res) => {
   const { title } = req.params;
-  console.log(title);
   
   try {
     if (!title) {
