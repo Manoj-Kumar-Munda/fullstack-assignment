@@ -4,9 +4,9 @@
 
 1. Install latest verion of Node.js in your local machine
 
-2. clone the repo -
-   <code> git clone https://github.com/Manoj-Kumar-Munda/fullstack-assignment 
-   
+2. clone the repo - <br/>
+   <code> 
+   git clone https://github.com/Manoj-Kumar-Munda/fullstack-assignment<br/> 
     cd fullstack-assignment
     </code>
 3. Install the npm packages
