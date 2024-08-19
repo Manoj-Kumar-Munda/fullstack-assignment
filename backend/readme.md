@@ -8,7 +8,7 @@
    <code>git clone https://github.com/Manoj-Kumar-Munda/fullstack-assignment<br/>
    cd fullstack-assignment</code>
 4. Install the npm packages
-    Open your terminal and enter the command - 
+    Open your terminal and enter the command - <br/>
     <code>npm i</code>
 
 5.  Set up .env file
