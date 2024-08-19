@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Card from "./Card";
 
 const CardContainer = () => {
   const [cards, setCards] = useState([]);
@@ -25,18 +26,10 @@ const CardContainer = () => {
 
   return (
     <div className="">
-      <div className="max-w-screen-lg w-full mx-auto  py-8 ">
-        <div className="max-w-[800px] mx-auto grid grid-cols-[360px_360px] justify-between gap-y-6">
+      <div className="max-w-screen-lg w-full mx-auto  py-12 ">
+        <div className="max-w-[800px] mx-auto grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] justify-items-center md:justify-items-stretch gap-x-6 gap-y-6">
           {cards?.map((card) => (
-            <div
-              className="bg-gray-100 rounded-lg max-w-[380px] border-2 border-gray-300"
-              key={card?._id}
-            >
-              <h1 className="border-b-2 py-2 border-gray-300 px-3 text-gray-600 font-extrabold ">
-                {card?.title}
-              </h1>
-              <p className="px-3 pt-2 pb-6">{card?.description}</p>
-            </div>
+            <Card key={card?._id} card={card} />
           ))}
         </div>
       </div>
