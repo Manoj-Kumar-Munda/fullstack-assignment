@@ -4,7 +4,7 @@ import Logo from "./Logo";
 const Footer = () => {
   return (
     <div className="bg-black  text-white">
-      <div className="max-w-screen-xl py-12 flex justify-between items-start mx-auto">
+      <div className="max-w-screen-xl py-12 flex flex-wrap justify-between items-start mx-auto px-4">
         <div className="flex flex-col gap-2">
           <h1 className="font-bold text-lg">Abstract</h1>
           <span>Branches</span>
