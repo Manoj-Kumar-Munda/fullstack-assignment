@@ -5,12 +5,13 @@
 1. Install latest verion of Node.js in your local machine
 
 2. clone the repo -
-    git clone https://github.com/Manoj-Kumar-Munda/fullstack-assignment
+   <code> git clone https://github.com/Manoj-Kumar-Munda/fullstack-assignment 
+   
     cd fullstack-assignment
-
+    </code>
 3. Install the npm packages
     Open your terminal and enter the command - 
-    npm i
+    <code>npm i</code>
 
 4.  Set up .env file
     - Create a .env file.
